@@ -9,7 +9,16 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width:100%;
 }
+
+.button {
+    border: 1px solid black;
+    background-color: blue;
+    color: white;
+}
+
+
 
 .hide {
     display: none;

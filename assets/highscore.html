@@ -5,9 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="css" href="./assets/style.css">
+    <link rel="stylesheet" type="css" href="../assets/style.css">
 </head>
 
+
 <body>
-    <h1><a href="../index.html">Return</a></h1>
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="game-box col-lg-8 p-4">
+
+            <div class="row">
+                <div class="col-4"></div>
+                <div id="highScoresDiv" class="col-12">
+                    <h1 id="scoresArea">High Scores</h1>
+                    <div id="highScoresList"></div>
+
+                    <button id="backButton">Go Back</button>
+                    <button id="clearScores" href="../index.html">Clear Scores</button>
+                </div>
+                <div class="col-4"></div>
+            </div>
+
+        </div>
+    </div>
 </body>
+
+<script src="score.js"></script>
