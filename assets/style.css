@@ -32,9 +32,25 @@ header {
     
 }
 
+#outer-box {
+    margin: 0 100px;
+    padding: 0 100px;
+}
+
+#inner-box {
+    margin: 100px;
+    padding: 100px; 
+}
+
 #highScoresDiv {
     text-align: center;
-    padding:25px;
+    border:12px solid sienna;
+    padding:100px;
+    margin:50px;
+}
+
+#highScoresList {
+    text-align: center;
 }
 
 .button {
