@@ -13,7 +13,7 @@ Learning Javascript can be fun, and challenging.  So I made a fun little quiz wi
 
 ## Screenshot of active website
 
-
+![Website screenshot](https://github.com/Kalmnir/Javascript-code-quiz/blob/main/assets/screenshot/Screenshot%202021-06-27%20at%2019-01-21%20Javascript%20Code%20Quiz.png)
 
 ## Link to deployed site
 https://kalmnir.github.io/Javascript-code-quiz/
