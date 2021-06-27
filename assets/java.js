@@ -6,9 +6,12 @@ var questionElement = document.getElementById("question");
 var answerButtons = document.getElementById("answer-buttons")
 var startButton = document.getElementById("start-game");
 var quiz = document.getElementById("quiz");
+var scoreInput = document.getElementById("score-input");
+var scoreSubmit = document.getElementById("score-button");
 var nextQuestion
 var score = 0;
 var currentIndex = 0;
+var allScores = [];
 var secondsRemaining = 65;
 var storedScores = JSON.parse(localStorage.getItem("userData"));
 var questions = [
@@ -51,7 +54,10 @@ function runTest() {
 
 }
 
-
+scoreSubmit.addEventListener("click", function () {
+    let inputName = document.getElementById("input-name").value
+    scorePage(inputName, userScore)
+});
 
 function showQuestion(question) {
     questionElement.innerText = question.question
@@ -63,6 +69,18 @@ function showQuestion(question) {
         button.addEventListener("click", displayNextQuestion);
 
     });
+}
+
+function scorePage(a, b) {
+
+    var userData = {
+        inits: a,
+        userScore: b
+    };
+    allScores.push(userData);
+
+    localStorage.setItem("userData", JSON.stringify(allScores));
+    location.href = "assets/highscore.html";
 }
 
 function displayNextQuestion(event) {
@@ -120,7 +138,8 @@ function endgame() {
     userScore.innerText = score, secondsRemaining;
     quiz.classList.add("hide");
     timer.classList.add("hide");
-    window.prompt("please type your initials");
+    scoreInput.classList.remove("hide");
+
 
 
 }
