@@ -1,7 +1,14 @@
+* {
+    background-color: ivory;
+    margin: 0%;
+    padding: 0%;
+}
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 5px;
 }
 
 .quiz-pretext {
@@ -12,8 +19,13 @@ header {
     width:100%;
 }
 
+#test-title {
+    
+}
+
 .button {
-    border: 1px solid black;
+    width: 10%;
+    border: 2px solid black;
     background-color: blue;
     color: white;
 }

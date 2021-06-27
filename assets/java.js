@@ -1,5 +1,4 @@
 var timer = document.getElementById("timer");
-var userScore = document.getElementById("score");
 var testTitle = document.getElementById("test-title");
 var testDescription = document.getElementById("test-description");
 var questionElement = document.getElementById("question");
@@ -8,8 +7,9 @@ var startButton = document.getElementById("start-game");
 var quiz = document.getElementById("quiz");
 var scoreInput = document.getElementById("score-input");
 var scoreSubmit = document.getElementById("score-button");
+var alert = document.getElementById("alert");
 var nextQuestion
-var score = 0;
+var userScore = 0;
 var currentIndex = 0;
 var allScores = [];
 var secondsRemaining = 65;
@@ -102,15 +102,11 @@ function displayNextQuestion(event) {
 
 function correction(response) {
     if (response) {
-        alert.innerText = "good"
-        score = score + 1
-        userScore.innerHTML = score
+        alert.innerText = "Good"
     } else {
         alert.innerText = "Wrong"
-        secondsRemaining = secondsRemaining - 5
+        secondsRemaining = secondsRemaining - 10
         timer.innerHTML = secondsRemaining
-        score = score - 1
-        userScore.innerHTML = score
     }
     setTimeout(function () {
         alert.innerText = ""
@@ -127,7 +123,7 @@ function runTimer() {
 
         if (secondsRemaining === 0) {
             clearInterval(timerInterval);
-
+            endgame()
         }
 
     }, 1000);
@@ -135,11 +131,8 @@ function runTimer() {
 }
 
 function endgame() {
-    userScore.innerText = score, secondsRemaining;
+    userScore.innerText = secondsRemaining;
+    timer.classList.add("hide")
     quiz.classList.add("hide");
-    timer.classList.add("hide");
     scoreInput.classList.remove("hide");
-
-
-
 }
