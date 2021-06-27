@@ -12,19 +12,15 @@ header {
 }
 
 .quiz-pretext {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width:100%;
+    text-align: center;
 }
 
-#test-title {
-    
+#score-input {
+    text-align: center;
 }
 
 .button {
-    width: 10%;
+    width: 200px;
     border: 2px solid black;
     background-color: blue;
     color: white;

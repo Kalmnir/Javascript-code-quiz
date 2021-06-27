@@ -7,13 +7,14 @@ var startButton = document.getElementById("start-game");
 var quiz = document.getElementById("quiz");
 var scoreInput = document.getElementById("score-input");
 var scoreSubmit = document.getElementById("score-button");
-var alert = document.getElementById("alert");
+var alertText = document.getElementById("alert");
+var submitBox = document.getElementById("submit-box")
 var nextQuestion
 var userScore = 0;
 var currentIndex = 0;
-var allScores = [];
 var secondsRemaining = 65;
-var storedScores = JSON.parse(localStorage.getItem("userData"));
+var timerInterval;
+var allScores = JSON.parse(localStorage.getItem("userData")) || [];
 var questions = [
     {
         question: "Which of the following is NOT a primitive data type used in Javascript?",
@@ -54,9 +55,18 @@ function runTest() {
 
 }
 
-scoreSubmit.addEventListener("click", function () {
+scoreSubmit.addEventListener("click", function (event) {
+    event.preventDefault()
     let inputName = document.getElementById("input-name").value
-    scorePage(inputName, userScore)
+    scorePage(inputName, secondsRemaining)
+    console.log("click")
+});
+
+submitBox.addEventListener("submit", function (event) {
+    event.preventDefault()
+    let inputName = document.getElementById("input-name").value
+    scorePage(inputName, secondsRemaining)
+    console.log("submit")
 });
 
 function showQuestion(question) {
@@ -102,14 +112,14 @@ function displayNextQuestion(event) {
 
 function correction(response) {
     if (response) {
-        alert.innerText = "Good"
+        alertText.innerText = "Good"
     } else {
-        alert.innerText = "Wrong"
+        alertText.innerText = "Wrong"
         secondsRemaining = secondsRemaining - 10
         timer.innerHTML = secondsRemaining
     }
     setTimeout(function () {
-        alert.innerText = ""
+        alertText.innerText = ""
 
     }, 1000);
 }
@@ -117,7 +127,7 @@ function correction(response) {
 function runTimer() {
 
 
-    var timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         secondsRemaining--;
         timer.textContent = secondsRemaining;
 
@@ -131,8 +141,8 @@ function runTimer() {
 }
 
 function endgame() {
+    clearInterval(timerInterval);
     userScore.innerText = secondsRemaining;
-    timer.classList.add("hide")
     quiz.classList.add("hide");
     scoreInput.classList.remove("hide");
 }
