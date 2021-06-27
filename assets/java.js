@@ -106,7 +106,7 @@ function displayNextQuestion(event) {
             showQuestion(nextQuestion)
         }
     } else {
-        endgame()
+        endGame()
     }
 }
 
@@ -133,14 +133,14 @@ function runTimer() {
 
         if (secondsRemaining === 0) {
             clearInterval(timerInterval);
-            endgame()
+            endGame()
         }
 
     }, 1000);
 
 }
 
-function endgame() {
+function endGame() {
     clearInterval(timerInterval);
     userScore.innerText = secondsRemaining;
     quiz.classList.add("hide");

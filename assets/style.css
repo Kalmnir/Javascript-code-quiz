@@ -12,11 +12,29 @@ header {
 }
 
 .quiz-pretext {
+    margin: 25px;
     text-align: center;
+}
+
+#test-description {
+    padding: 25px;
+}
+
+#quiz {
+    padding: 25px;
+}
+#question {
+    padding: 10px;
 }
 
 #score-input {
     text-align: center;
+    
+}
+
+#highScoresDiv {
+    text-align: center;
+    padding:25px;
 }
 
 .button {
