@@ -1,7 +1,7 @@
-var storedScores = JSON.parse(localStorage.getItem("userData"));
-var highScoresArea = document.querySelector("highScoresList");
-var backBtn = document.querySelector("backButton");
-var clearBtn = document.querySelector("clearScores");
+var storedScores = JSON.parse(localStorage.getItem("#userData"));
+var highScoresArea = document.querySelector("#highScoresList");
+var backBtn = document.querySelector("#backButton");
+var clearBtn = document.querySelector("#clearScores");
 
 
 function displayScores() {
@@ -15,12 +15,12 @@ function displayScores() {
             scoreEntry.innerHTML = initials + " - " + scores;
             scoreList.appendChild(scoreEntry);
         }
-        // highScoresArea.appendChild(scoreList);
+        highScoresArea.appendChild(scoreList);
     }
 };
 
 backBtn.addEventListener("click", function () {
-    location.href = "..index.html";
+    location.href = "../index.html";
 });
 
 clearBtn.addEventListener("click", function () {

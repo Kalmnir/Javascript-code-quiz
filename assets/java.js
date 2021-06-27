@@ -80,7 +80,7 @@ function scorePage(a, b) {
     allScores.push(userData);
 
     localStorage.setItem("userData", JSON.stringify(allScores));
-    location.href = "assets/highscore.html";
+    location.href = "./assets/highscore.html";
 }
 
 function displayNextQuestion(event) {
